@@ -18,3 +18,4 @@
           - uniscan
           - wig
           - wafw00f
+      become: true
