@@ -1,0 +1,8 @@
+---
+- name: "Customising Kali"
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: "Test"
+      debug:
+        msg: "Testing Hacker Playbook"
