@@ -4,5 +4,17 @@
   connection: local
   tasks:
     - name: "Test"
-      debug:
+      ansible.builtin.debug:
         msg: "Testing Hacker Playbook"
+    - name: "Webapp tools installation"
+      ansible.builtin.apt:
+        pkg:
+          - dmitry
+          - wpscan
+          - whatweb
+          - nuclei
+          - o-saft
+          - tlssled
+          - uniscan
+          - wig
+          - wafw00f
