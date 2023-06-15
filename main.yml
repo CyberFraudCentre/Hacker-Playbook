@@ -35,7 +35,6 @@
              && source .env/bin/activate \
              && python3 -m pip install -U pip virtualenv \
              && python3 -m pip install -r requirements.txt \
-             && touch requirements-install-complete
-        changed_when: false
+        creates: requirements-install-complete
              
         
