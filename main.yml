@@ -27,6 +27,7 @@
         owner: "{{ user }}"
         group: "{{ user }}"
         path: /opt
+      become: true
 
     - name: "Download Algo source"
       ansible.builtin.git:
