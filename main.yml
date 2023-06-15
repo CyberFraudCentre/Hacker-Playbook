@@ -41,7 +41,7 @@
         pkg:
           - resolvconf
           - python3-virtualenv
-        install_reccomend: false
+        install_recommends: false
         update_cache: true
       become: true
 
