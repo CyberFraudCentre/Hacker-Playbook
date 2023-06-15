@@ -28,8 +28,8 @@
     - name: "Dependencies for Algo"
       ansible.builtin.apt:
         pkg:
-         - resolveconf
-         
+         - resolvconf
+    - mame: "Algo python dependencies"  
       ansible.builtin.shell: 
         cmd: cd /opt/algo && python3 -m virtualenv --python="$(command -v python3)" .env 
              && source .env/bin/activate
