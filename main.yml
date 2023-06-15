@@ -34,5 +34,7 @@
         cmd: cd /opt/Algo-source && python3 -m virtualenv --python="$(command -v python3)" .env \
              && source .env/bin/activate \
              && python3 -m pip install -U pip virtualenv \
-             && python3 -m pip install -r requirements.txt
-        changed_when: false
+             && python3 -m pip install -r requirements.txt \
+             && touch requirements-install-complete
+             
+        
