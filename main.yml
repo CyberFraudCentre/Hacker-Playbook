@@ -1,6 +1,8 @@
 ---
 - name: "Customising Kali"
   hosts: localhost
+  vars:
+    user: "{{ lookup('ansible.builtin.env', 'USER') }}"
   connection: local
   tasks:
     - name: "Test"
@@ -19,6 +21,12 @@
           - wig
           - wafw00f
       become: true
+
+    - name: "Set user that ran the playbook as owner of /opt"
+      ansible.builtin.file:
+        owner: "{{ user }}"
+        group: "{{ user }}"
+        path: /opt
 
     - name: "Download Algo source"
       ansible.builtin.git:
