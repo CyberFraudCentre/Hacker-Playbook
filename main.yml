@@ -20,6 +20,7 @@
           - uniscan
           - wig
           - wafw00f
+        update_cache: true
       become: true
 
     - name: "Set user that ran the playbook as owner of /opt"
@@ -39,6 +40,9 @@
       ansible.builtin.apt:
         pkg:
           - resolvconf
+          - python3-virtualenv
+        install_reccomend: false
+        update_cache: true
       become: true
 
     - name: "Algo python dependencies"
