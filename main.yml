@@ -24,6 +24,7 @@
       ansible.builtin.git:
         repo: https://github.com/trailofbits/algo.git
         dest: /opt/Algo-source
+        version: master
 
     - name: "Dependencies for Algo"
       ansible.builtin.apt:
