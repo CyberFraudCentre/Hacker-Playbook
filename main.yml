@@ -19,3 +19,20 @@
           - wig
           - wafw00f
       become: true
+      
+    - name: "Download Algo source"
+      ansible.builtin.git:
+        repo: https://github.com/trailofbits/algo.git
+        dest: /opt/Algo-source
+      
+    - name: "Dependencies for Algo"
+      ansible.builtin.apt:
+        pkg:
+         - resolveconf
+         
+      ansible.builtin.shell: 
+        cmd: cd /opt/algo && python3 -m virtualenv --python="$(command -v python3)" .env 
+             && source .env/bin/activate
+             && python3 -m pip install -U pip virtualenv 
+             && python3 -m pip install -r requirements.txt
+
