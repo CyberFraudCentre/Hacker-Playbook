@@ -38,6 +38,8 @@
       ansible.builtin.apt:
         pkg:
           - resolvconf
+      become: true
+
     - name: "Algo python dependencies"
       ansible.builtin.shell:
         cmd: cd /opt/Algo-source && python3 -m virtualenv --python="$(command -v python3)" .env \
