@@ -45,5 +45,5 @@
         cmd: cd /opt/Algo-source && python3 -m virtualenv --python="$(command -v python3)" .env \
              && source .env/bin/activate \
              && python3 -m pip install -U pip virtualenv \
-             && python2 -m pip install -r requirements.txt
+             && python3 -m pip install -r requirements.txt
         creates: /opt/Algo-source/.env/libs/ansible
