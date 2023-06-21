@@ -4,52 +4,5 @@
   vars:
     user: "{{ lookup('ansible.builtin.env', 'USER') }}"
   connection: local
-  tasks:
-    - name: "Test"
-      ansible.builtin.debug:
-        msg: "Testing Hacker Playbook"
-    - name: "Webapp tools installation"
-      ansible.builtin.apt:
-        pkg:
-          - dmitry
-          - wpscan
-          - whatweb
-          - nuclei
-          - o-saft
-          - tlssled
-          - uniscan
-          - wig
-          - wafw00f
-        update_cache: true
-      become: true
-      become_method: sudo
-
-    - name: "Download Algo source"
-      ansible.builtin.git:
-        repo: https://github.com/trailofbits/algo.git
-        dest: /opt/Algo-source
-        version: master
-      become: true
-      become_method: sudo
-
-    - name: "Dependencies for Algo"
-      ansible.builtin.apt:
-        pkg:
-          - resolvconf
-          - python3-virtualenv
-        install_recommends: false
-        update_cache: true
-      become: true
-      become_method: sudo
-
-    - name: "Algo python dependencies"
-      ansible.builtin.shell: |
-        cd /opt/Algo-source && python3 -m virtualenv --python="$(command -v python3)" .env \
-        && source .env/bin/activate \
-        && python3 -m pip install -U pip virtualenv \
-        && python3 -m pip install -r requirements.txt
-      args:
-        executable: /bin/bash
-        creates: /opt/Algo-source/.env/libs/ansible
-      become: true
-      become_method: sudo
+  roles:
+    role: "roles/install_tools"
