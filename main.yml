@@ -5,4 +5,5 @@
     user: "{{ lookup('ansible.builtin.env', 'USER') }}"
   connection: local
   roles:
-    role: "roles/install_tools"
+    - role: "roles/install_tools"
+    - role: "roles/config_tools"
