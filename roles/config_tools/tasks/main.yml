@@ -1,0 +1,7 @@
+---
+# tasks file for config_tools
+- name: "Install firefox addons"
+  ansible.builtin.template:
+    src: "policies.json.j2"
+    dest: "/usr/share/firefox-esr/distribution/policies.json"
+    mode: '644'
