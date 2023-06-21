@@ -5,3 +5,5 @@
     src: "policies.json.j2"
     dest: "/usr/share/firefox-esr/distribution/policies.json"
     mode: '644'
+  become: true
+  become_method: sudo
