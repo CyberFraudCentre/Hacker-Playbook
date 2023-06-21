@@ -22,19 +22,15 @@
           - wafw00f
         update_cache: true
       become: true
-
-    - name: "Set user that ran the playbook as owner of /opt"
-      ansible.builtin.file:
-        owner: "{{ user }}"
-        group: "{{ user }}"
-        path: /opt
-      become: true
+      become_method: sudo
 
     - name: "Download Algo source"
       ansible.builtin.git:
         repo: https://github.com/trailofbits/algo.git
         dest: /opt/Algo-source
         version: master
+      become: true
+      become_method: sudo
 
     - name: "Dependencies for Algo"
       ansible.builtin.apt:
@@ -44,6 +40,7 @@
         install_recommends: false
         update_cache: true
       become: true
+      become_method: sudo
 
     - name: "Algo python dependencies"
       ansible.builtin.shell: |
@@ -54,3 +51,5 @@
       args:
         executable: /bin/bash
         creates: /opt/Algo-source/.env/libs/ansible
+      become: true
+      become_method: sudo
