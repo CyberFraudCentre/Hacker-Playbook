@@ -3,7 +3,11 @@
   hosts: localhost
   vars:
     user: "{{ lookup('ansible.builtin.env', 'USER') }}"
+    firefox_addons:
+      - foxyproxy-standard
+      - darkreader
+      - wappalyzer
   connection: local
   roles:
-    - role: "roles/install_tools"
-    - role: "roles/config_tools"
+    - role: install_tools
+    - role: config_tools
