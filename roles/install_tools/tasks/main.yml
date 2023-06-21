@@ -45,6 +45,6 @@
     && python3 -m pip install -r requirements.txt
   args:
     executable: /bin/bash
-    creates: /opt/Algo-source/.env/libs/ansible
+    creates: /opt/Algo-source/.env
   become: true
   become_method: sudo
