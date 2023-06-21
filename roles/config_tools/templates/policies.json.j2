@@ -1,33 +1,31 @@
 {
-  "policies": {
-    "DisplayBookmarksToolbar": true,
-    "NoDefaultBookmarks": true,
-    "OverrideFirstRunPage": "",
-    "OverridePostUpdatePage": "",
-    "Homepage": {
-      "URL": "file:///usr/share/kali-defaults/web/homepage.html",
-      "Locked": false,
-      "StartPage": "homepage"
-    },
-    "DisableTelemetry": true,
-    "NetworkPrediction": false,
-    "DNSOverHTTPS": {
-      "Enabled": false
-    },  
-    "Extensions": {
-      "Install": [{% for item in firefox_addons %}"https://addons.mozilla.org/firefox/downloads/latest/{{ item }}/latest.xpi"{{ "," if not loop.last }} 
-		  {% endfor %}
-      ],
-    },
-    "ExtensionSettings": {
-    "CaptivePortal": false,
-    "FirefoxHome": {
-      "Search": true,
-      "TopSites": true,
-      "Highlights": false,
-      "Pocket": false,
-      "Snippets": false,
-      "Locked": false
+    "policies": {
+      "DisplayBookmarksToolbar": true,
+      "NoDefaultBookmarks": true,
+      "OverrideFirstRunPage": "",
+      "OverridePostUpdatePage": "",
+      "Homepage": {
+        "URL": "file:///usr/share/kali-defaults/web/homepage.html",
+        "Locked": false,
+        "StartPage": "homepage"
+      },
+      "DisableTelemetry": true,
+      "NetworkPrediction": false,
+      "DNSOverHTTPS": {
+        "Enabled": false
+      },
+      "Extensions": {
+        "Install" : [{% for item in firefox_addons %}"https://addons.mozilla.org/firefox/downloads/latest/{{ item }}/latest.xpi"{{ "," if not loop.last }}
+        {% endfor %}]
+      },
+      "CaptivePortal": false,
+      "FirefoxHome": {
+        "Search": true,
+        "TopSites": true,
+        "Highlights": false,
+        "Pocket": false,
+        "Snippets": false,
+        "Locked": false
+      }
     }
-  }
 }
