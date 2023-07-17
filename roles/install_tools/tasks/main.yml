@@ -1,9 +1,5 @@
 ---
-# tasks file for install_tools
-- name: "Test"
-  ansible.builtin.debug:
-    msg: "Testing Hacker Playbook"
-- name: "Webapp tools installation"
+- name: "Installation of Web Application testing tools"
   ansible.builtin.apt:
     pkg:
       - dmitry
@@ -15,6 +11,7 @@
       - uniscan
       - wig
       - wafw00f
+    # update apt package cache(apt update) before installing tools
     update_cache: true
   become: true
   become_method: sudo
@@ -23,6 +20,7 @@
   ansible.builtin.git:
     repo: https://github.com/trailofbits/algo.git
     dest: /opt/Algo-source
+    # download source from the master branch
     version: master
   become: true
   become_method: sudo
@@ -32,6 +30,7 @@
     pkg:
       - resolvconf
       - python3-virtualenv
+    # Do not install suggested packages
     install_recommends: false
     update_cache: true
   become: true

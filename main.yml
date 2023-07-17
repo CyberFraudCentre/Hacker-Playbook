@@ -1,14 +1,17 @@
 ---
-- name: "Customising Kali"
+- name: "Cyber & Fraud Centre Scotland - Hacker Laptop Setup"
+  # perform playbook tasks on the local machine
   hosts: localhost
+  connection: local
   vars:
+    # username of user which ran the playbook
     user: "{{ lookup('ansible.builtin.env', 'USER') }}"
+    # addons to be automatically installed for firefox
     firefox_addons:
       - foxyproxy-standard
       - darkreader
       - wappalyzer
       - user-agent-string-switcher
-  connection: local
   roles:
     - role: install_tools
     - role: config_tools

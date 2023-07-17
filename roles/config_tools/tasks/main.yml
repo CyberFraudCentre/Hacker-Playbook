@@ -1,9 +1,11 @@
 ---
-# tasks file for config_tools
 - name: "Install firefox addons"
   ansible.builtin.template:
+    # use this template file
     src: "policies.json.j2"
+    # replace template contents and place at this location
     dest: "/usr/lib/firefox-esr/distribution/policies.json"
+    # file permissions at destination are -rw-r--r--
     mode: '644'
   become: true
   become_method: sudo
