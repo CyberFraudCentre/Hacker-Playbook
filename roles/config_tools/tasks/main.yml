@@ -9,3 +9,29 @@
     mode: '644'
   become: true
   become_method: sudo
+
+- name: "Check for CA Certificate"
+  ansible.builtin.stat:
+    path: /usr/share/ca-certificates/mozilla/cacert.der
+  register: burp_cert
+
+- name: "Retrieve Burp CA Certificate"
+  ansible.builtin.shell: |
+    timeout 20 /usr/lib/jvm/java-17-openjdk-amd64/bin/java -Djava.awt.headless=true -jar /usr/share/burpsuite/burpsuite.jar \
+    < <(echo y) & sleep 15 \
+    ; curl http://127.0.0.1:8080/cert -o /tmp/cacert.der
+  args:
+    executable: /bin/bash
+  when: not burp_cert.stat.exists
+
+- name: "Move Certificate to /usr/share/ca-certificates/mozilla"
+  ansible.builtin.copy:
+    src: /tmp/cacert.der
+    dest: /usr/share/ca-certificates/mozilla/cacert.der
+    owner: root
+    group: root
+    mode: 0644
+  when: not burp_cert.stat.exists
+  become: true
+  become_method: sudo
+
