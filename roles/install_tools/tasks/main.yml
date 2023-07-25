@@ -47,3 +47,12 @@
     creates: /opt/Algo-source/.env
   become: true
   become_method: sudo
+
+- name: "Install Jruby and Jython for Burp Suite Extensions"
+  ansible.builtin.apt:
+    pkg:
+      - jython
+      - jruby
+    update_cache: true
+  become: true
+  become_method: sudo
