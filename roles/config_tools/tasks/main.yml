@@ -1,18 +1,7 @@
 ---
-- name: "Install firefox addons"
-  ansible.builtin.template:
-    # use this template file
-    src: "policies.json.j2"
-    # replace template contents and place at this location
-    dest: "/usr/lib/firefox-esr/distribution/policies.json"
-    # file permissions at destination are -rw-r--r--
-    mode: '644'
-  become: true
-  become_method: sudo
-
 - name: "Check for CA Certificate"
   ansible.builtin.stat:
-    path: /usr/share/ca-certificates/mozilla/cacert.der
+    path: /usr/share/ca-certificates/Burp_cacert.der
   register: burp_cert
 
 - name: "Retrieve Burp CA Certificate"
@@ -24,14 +13,25 @@
     executable: /bin/bash
   when: not burp_cert.stat.exists
 
-- name: "Move Certificate to /usr/share/ca-certificates/mozilla"
+- name: "Move Certificate to /usr/share/ca-certificates"
   ansible.builtin.copy:
     src: /tmp/cacert.der
-    dest: /usr/share/ca-certificates/mozilla/cacert.der
+    dest: /usr/share/ca-certificates/Burp_cacert.der
     owner: root
     group: root
     mode: 0644
   when: not burp_cert.stat.exists
+  become: true
+  become_method: sudo
+
+- name: "Install firefox addons / certificates"
+  ansible.builtin.template:
+    # use this template file
+    src: "policies.json.j2"
+    # replace template contents and place at this location
+    dest: "/usr/lib/firefox-esr/distribution/policies.json"
+    # file permissions at destination are -rw-r--r--
+    mode: '644'
   become: true
   become_method: sudo
 
