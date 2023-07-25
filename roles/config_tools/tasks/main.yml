@@ -35,3 +35,7 @@
   become: true
   become_method: sudo
 
+- name: "Configure burp user settings"
+  ansible.builtin.template:
+    src: "UserConfigCommunity.json.j2"
+    dest: "/home/{{ user }}/.BurpSuite/UserConfigCommunity.json"
