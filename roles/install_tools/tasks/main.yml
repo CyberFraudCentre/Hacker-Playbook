@@ -68,3 +68,12 @@
     deb: /home/{{ user }}/Downloads/Nessus-10.5.3-debian10_amd64.deb
   become: true
   become_method: sudo
+
+- name: "Clone Vulnerability Assessment Script from Adams GitHub"
+  ansible.builtin.git:
+    repo: https://github.com/Adam-board/Vulnerability-Assessment-Script.git
+    dest: /opt/Vulnerability-Assessment-Script
+    # download source from the master branch
+    version: main
+  become: true
+  become_method: sudo
