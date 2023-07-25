@@ -56,3 +56,15 @@
     update_cache: true
   become: true
   become_method: sudo
+
+- name: "Download Nessus .deb"
+  ansible.builtin.get_url:
+    url: https://www.tenable.com/downloads/api/v2/pages/nessus/files/Nessus-10.5.3-debian10_amd64.deb
+    dest: /home/{{ user }}/Downloads
+    checksum: sha256:7a757b41deafc79b4aebb3c23305990b9ffb4f5aee1b59bfface7d3c7e27a2bb
+
+- name: "Install nessus"
+  ansible.builtin.apt:
+    deb: /home/{{ user }}/Downloads/Nessus-10.5.3-debian10_amd64.deb
+  become: true
+  become_method: sudo
