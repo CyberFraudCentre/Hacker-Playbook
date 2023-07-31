@@ -36,7 +36,6 @@
     block: |
       export WORKON_HOME=/home/{{ user }}/.virtualenvs
       export PROJECT_HOME=/home/{{ user }}/venvs
-      export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
       source /home/{{ user }}/.local/bin/virtualenvwrapper.sh
   check_mode: true
   register: venv_setup
@@ -47,7 +46,6 @@
     block: |
       export WORKON_HOME=/home/{{ user }}/.virtualenvs
       export PROJECT_HOME=/home/{{ user }}/venvs
-      export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
       source /home/{{ user }}/.local/bin/virtualenvwrapper.sh
   when: venv_setup.changed
 
