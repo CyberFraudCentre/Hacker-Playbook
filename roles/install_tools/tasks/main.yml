@@ -11,6 +11,7 @@
       - uniscan
       - wig
       - wafw00f
+      - feroxbuster
     # update apt package cache(apt update) before installing tools
     update_cache: true
   become: true
