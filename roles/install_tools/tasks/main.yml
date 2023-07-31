@@ -26,6 +26,31 @@
   become: true
   become_method: sudo
 
+- name: "Install virtualenvwrapper"
+  ansible.builtin.pip:
+    name: virtualenvwrapper
+
+- name: "Check if required lines for virtualenvwrapper to function are present in .zshrc already"
+  ansible.builtin.blockinfile:
+    path: /home/{{ user }}/.zshrc
+    block: |
+      export WORKON_HOME=/home/{{ user }}/.virtualenvs
+      export PROJECT_HOME=/home/{{ user }}/venvs
+      export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+      source /home/{{ user }}/.local/bin/virtualenvwrapper.sh
+  check_mode: true
+  register: venv_setup
+
+- name: "Insert lines required for virtualenvwrapper to function into .zshrc"
+  ansible.builtin.blockinfile:
+    path: /home/{{ user }}/.zshrc
+    block: |
+      export WORKON_HOME=/home/{{ user }}/.virtualenvs
+      export PROJECT_HOME=/home/{{ user }}/venvs
+      export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+      source /home/{{ user }}/.local/bin/virtualenvwrapper.sh
+  when: venv_setup.changed
+
 - name: "Download Algo source"
   ansible.builtin.git:
     repo: https://github.com/trailofbits/algo.git
