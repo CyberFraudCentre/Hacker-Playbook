@@ -17,6 +17,15 @@
   become: true
   become_method: sudo
 
+- name: "Install QOL tools"
+  ansible.builtin.apt:
+    pkg:
+      - xclip
+      - tldr
+    update_cache: true
+  become: true
+  become_method: sudo
+
 - name: "Download Algo source"
   ansible.builtin.git:
     repo: https://github.com/trailofbits/algo.git
