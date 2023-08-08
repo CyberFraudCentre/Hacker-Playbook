@@ -91,15 +91,25 @@
   become: true
   become_method: sudo
 
+- name: "Check if nessus download link is dead or alive"
+  ansible.builtin.uri:
+    url: https://www.tenable.com/downloads/api/v2/pages/nessus/files/Nessus-10.5.3-debian10_amd64.deb
+    method: HEAD
+  ignore_errors: true
+  no_log: true
+  register: nessus_dl
+
 - name: "Download Nessus .deb"
   ansible.builtin.get_url:
     url: https://www.tenable.com/downloads/api/v2/pages/nessus/files/Nessus-10.5.3-debian10_amd64.deb
     dest: /home/{{ user }}/Downloads
     checksum: sha256:7a757b41deafc79b4aebb3c23305990b9ffb4f5aee1b59bfface7d3c7e27a2bb
+  when: nessus_dl.status == 200
 
 - name: "Install nessus"
   ansible.builtin.apt:
     deb: /home/{{ user }}/Downloads/Nessus-10.5.3-debian10_amd64.deb
+  when: nessus_dl.status == 200
   become: true
   become_method: sudo
 
