@@ -7,11 +7,13 @@ each engagement, ensuring that there are no overlaps in data between tests and c
 
 ## Table of Contents
 
-1. Prerequisites
+1. [Prerequisites](#prerequisites)
 
 ## Prerequisites
 
-- ansible-core
+The only requirement to use this playbook is the ansible-core package, this contains
+everything needed by ansible to successfully execute the playbook. The following
+command can be used to download the package.
 
 ```bash
 sudo apt update -y && sudo apt update -y && \ 
