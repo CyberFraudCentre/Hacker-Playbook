@@ -8,6 +8,7 @@ each engagement, ensuring that there are no overlaps in data between tests and c
 ## Table of Contents
 
 1. [Prerequisites](#prerequisites)
+1. [Usage](#usage)
 
 ## Prerequisites
 
@@ -20,3 +21,10 @@ sudo apt update -y && sudo apt update -y && \
 sudo apt install ansible-core -y
 ```
 
+## Usage
+
+### Creating a new Kali Virtual Machine
+
+The first step in using this playbook is creating a fresh Kali virtual machine.
+An ISO file for Kali can be downloaded from [here](https://www.kali.org/get-kali/#kali-installer-images)
+and installation guidance can be found [here](https://www.kali.org/docs/installation/hard-disk-install/).
