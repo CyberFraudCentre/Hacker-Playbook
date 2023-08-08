@@ -22,6 +22,7 @@
     pkg:
       - xclip
       - tldr
+      - wireguard-tools # required to connect to testing VPN
     update_cache: true
   become: true
   become_method: sudo
