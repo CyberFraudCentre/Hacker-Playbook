@@ -24,13 +24,7 @@ sudo apt install ansible-core -y
 
 ## Usage
 
-### Creating a new Kali Virtual Machine
-
-The first step in using this playbook is creating a fresh Kali virtual machine.
-An ISO file for Kali can be downloaded from [here](https://www.kali.org/get-kali/#kali-installer-images)
-and installation guidance can be found [here](https://www.kali.org/docs/installation/hard-disk-install/).
-
-### Using the Playbook
+### Obtaining the Playbook
 
 Once Kali is installed the next step is to clone the GitHub repository containing
 the playbook. To do this open a terminal and type the following.
