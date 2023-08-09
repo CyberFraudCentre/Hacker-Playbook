@@ -13,9 +13,22 @@ tests and clients.
 
 ## Prerequisites
 
-The only requirement to use this playbook is the ansible-core package, this contains
-everything needed by ansible to successfully execute the playbook. The following
-command can be used to download the package.
+### Kali Linux Virtual Machine
+
+Before anything else can be done a Kali virtual machine must be installed. To do
+this, first download the Kali ISO file from [here](https://www.kali.org/get-kali/#kali-installer-images).
+
+Once installed, create a virtual machine following the guidance for your preferred
+platform, e.g [VMware](https://www.kali.org/docs/virtualization/install-vmware-guest-vm/) or [VirtualBox](https://www.kali.org/docs/virtualization/install-virtualbox-guest-vm/)
+Once a virtual machine has been created start the VM and follow the installation
+guide [here](https://www.kali.org/docs/installation/hard-disk-install/).
+
+### Packages
+
+With a fully installed Kali VM the only requirement left to use the playbook is
+the ansible-core package, this contains everything needed for a successful operation
+of the playbook. Using the following command will download the package (alongside
+updating the package cache and installing any updates).
 
 ```bash
 sudo apt update -y && sudo apt upgrade -y && \ 
