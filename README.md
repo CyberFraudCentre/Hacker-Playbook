@@ -10,6 +10,7 @@ tests and clients.
 
 1. [Prerequisites](#prerequisites)
 1. [Usage](#usage)
+1. [Expected Behaviour](#expected-behaviour)
 
 ## Prerequisites
 
@@ -90,3 +91,7 @@ and firefox.
 - jruby
 - jython
 - nessus
+
+## Expected behaviour
+
+
