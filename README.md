@@ -59,3 +59,34 @@ ansible-playbook main.yml -K
 The playbook will then install the extra tools used by Cyber and Fraud Centre hackers
 alongside making a few QOL changes to software configurations such as burpsuite
 and firefox.
+
+### Installed/Modified software
+
+#### Modified
+
+- BurpSuite
+- Firefox
+
+#### Installed
+
+- Vulnerability Assessment Script (Adam Board)
+- dmitry
+- wpscan
+- whatweb
+- nuclei
+- o-saft
+- tlssled
+- uniscan
+- wig
+- wafw00f
+- feroxbuster
+- xclip
+- tldr
+- wireguard-tools
+- virtualenvwrapper
+- algo
+- resolvconf
+- python3-virtualenv
+- jruby
+- jython
+- nessus
