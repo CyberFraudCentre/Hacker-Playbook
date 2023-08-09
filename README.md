@@ -33,6 +33,8 @@ the playbook. To do this open a terminal and type the following.
 git clone https://github.com/CyberFraudCentre/Hacker-Playbook.git
 ```
 
+### Running the Playbook
+
 To then install the playbook change into the newly created directory for the repo
 (`cd Hacker-Playbook`) and run the following command, entering the password for
 your user account when prompted.
@@ -42,5 +44,5 @@ ansible-playbook main.yml -K
 ```
 
 The playbook will then install the extra tools used by Cyber and Fraud Centre hackers
-alongside making a few QOL changes to software such as burpsuite and firefox.
-
+alongside making a few QOL changes to software configurations such as burpsuite
+and firefox.
