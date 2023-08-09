@@ -18,7 +18,7 @@ everything needed by ansible to successfully execute the playbook. The following
 command can be used to download the package.
 
 ```bash
-sudo apt update -y && sudo apt update -y && \ 
+sudo apt update -y && sudo apt upgrade -y && \ 
 sudo apt install ansible-core -y
 ```
 
