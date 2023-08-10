@@ -98,3 +98,19 @@ This section discusses potential issues that occur when running the playbook
 (on Kali Linux), any issues that occur from steps relating to installation of
 Kali Linux or installation of other prerequisites will not be covered.
 
+### Nessus Fails to Download / Install
+
+There is a check in place to see if the API location (from which the nessus
+.deb file is downloaded from). When a new version of nessus is released the
+prior endpoint is removed causing the script to fail the download / install
+process.
+
+__If this message is shown during the script execution the download link is down__
+```bash
+TASK [install_tools : Check if nessus download link is dead or alive] *******
+***
+fatal: [localhost]: FAILED! => {"censored": "the output has been hidden due t
+o the fact that 'no_log: true' was specified for this result", "changed": fal
+se}
+ ... ignoring
+```
