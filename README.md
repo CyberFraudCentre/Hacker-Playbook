@@ -10,7 +10,7 @@ tests and clients.
 
 1. [Prerequisites](#prerequisites)
 1. [Usage](#usage)
-1. [Expected Behaviour](#expected-behaviour)
+1. [Troubleshooting](#troubleshooting)
 
 ## Prerequisites
 
@@ -92,6 +92,9 @@ and firefox.
 - jython
 - nessus
 
-## Expected behaviour
+## Troubleshooting
 
+This section discusses potential issues that occur when running the playbook
+(on Kali Linux), any issues that occur from steps relating to installation of
+Kali Linux or installation of other prerequisites will not be covered.
 
