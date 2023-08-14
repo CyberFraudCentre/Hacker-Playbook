@@ -142,3 +142,23 @@ to be performed.
 After these steps are complete a pull request can be submitted (a pull request
 is the process of requesting the repository owner to pull your changes into
 their repository).
+
+### Forking and Cloning the Repository
+
+Before any other steps can be done, it is first required to make a fork of the
+[main repository](https://github.com/CyberFraudCentre/Hacker-Playbook.git).
+This is a required step as _most_ users will not have access to create new
+branches on the main repository.
+
+Cloning the repository was covered in the [Usage](#obtaining-the-playbook) section, However
+the link should be changed to `https://github.com/[username]/Hacker-Playbook`.
+Forking the repository means that you have a copy of the repo connected to your
+account and can do as you wish to it (in this case create a new branch and make
+changes).
+
+Finally the main repository must be set as an upstream remote of your fork.
+`git remote add --track master upstream https://github.com/CyberFraudCentre/Hacker-Playbook`
+
+__It is good practice to first synchronise your fork with the main repo__
+First, pull remote changes to local upstream `git fetch upstream`. Second,
+merge changes to local main branch `git merge upstream/main`.
