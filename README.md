@@ -127,3 +127,18 @@ sha256sum /path/to/Nessus-x.x.x-debian10_amd64.deb # checksum
 
 sudo apt insall -f /path/to/Nessus-x.x.x-debian10_amd64.deb # install nessus deb
 ```
+
+## Submitting Fixes / New Additions
+
+To make have your changes merged with the contents of the repository a pull
+request should be made. Before submitting a pull request there are 4 key steps
+to be performed.
+
+1. Fork the repository
+1. Clone the repository
+1. Create a new branch
+1. Make necessary changes
+
+After these steps are complete a pull request can be submitted (a pull request
+is the process of requesting the repository owner to pull your changes into
+their repository).
