@@ -162,3 +162,13 @@ Finally the main repository must be set as an upstream remote of your fork.
 __It is good practice to first synchronise your fork with the main repo__
 First, pull remote changes to local upstream `git fetch upstream`. Second,
 merge changes to local main branch `git merge upstream/main`.
+
+### Creating a New Branch and Making Changes
+
+A new branch must be created and switched to. Creating a new __local__ branch
+can be done with the command `git branch [branch-name]` which can then be
+switched to using `git checkout branch-name` (these two steps can be done in a
+single command - `git checkout -b branch-name`).
+
+Changes can be committed locally with `git commit [path-to-file]` (to commit
+only a specific portion of the changes made to a file, use `git commit -p [path-to-file]`).
