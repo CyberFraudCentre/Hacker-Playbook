@@ -128,6 +128,23 @@ sha256sum /path/to/Nessus-x.x.x-debian10_amd64.deb # checksum
 sudo apt insall -f /path/to/Nessus-x.x.x-debian10_amd64.deb # install nessus deb
 ```
 
+#### Replacing the Broken Link in the Playbook
+
+There are 2 places in the playbook where the link to download nessus is present,
+all three of these are found in the `roles/install_tools/tasks/main.yml` file.
+
+1. Check if nessus download link is dead or alive
+1. Download Nessus .deb
+
+To retrieve the new, functioning url follow the link to the download page in
+the [Manual Install](#manual-install) section. Remember to change the platform
+before proceeding further. Instead of manually downloading the deb file, open
+the "Download with curl" link and copy the url used; this will be used to
+replace the broken link. On the same page the sha256 checksum can be found, this
+is needed to replace the old checksum in the second task.
+
+_For help on submitting changes see the [Submitting Fixes / New Additions](#submitting-fixes--new-additions) section_
+
 ## Submitting Fixes / New Additions
 
 To make have your changes merged with the contents of the repository a pull
