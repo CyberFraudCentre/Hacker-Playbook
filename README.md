@@ -117,7 +117,7 @@ se}
 
 #### Manual install
 
-Go to the [downloads section](https://www.tenable.com/downloads/nessus) for nessus on the tenable website and select the
+Go to the [downloads](https://www.tenable.com/downloads/nessus) section for nessus on the tenable website and select the
 platform Linux-Debian-amd64. Click the download button and accept the License
 Agreement, after the file has downloaded compare the sha256 checksum of the
 downloaded file to the one shown on the website.
