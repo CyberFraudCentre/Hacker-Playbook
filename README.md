@@ -11,6 +11,7 @@ each client.
 1. [Prerequisites](#prerequisites)
 1. [Usage](#usage)
 1. [Troubleshooting](#troubleshooting)
+1. [Submitting Fixes / New Additions](#submitting-fixes--new-additions)
 
 ## Prerequisites
 
@@ -131,8 +132,9 @@ sudo apt insall -f /path/to/Nessus-x.x.x-debian10_amd64.deb # install nessus deb
 #### Replacing the Broken Link in the Playbook
 
 There are 2 places in the playbook where the link to download nessus is present,
-all three of these are found in the `roles/install_tools/tasks/main.yml` file.
+both of these are found in the `roles/install_tools/tasks/main.yml` file.
 
+__Task Names__
 1. Check if nessus download link is dead or alive
 1. Download Nessus .deb
 
