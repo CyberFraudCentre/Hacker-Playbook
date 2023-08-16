@@ -172,3 +172,15 @@ single command - `git checkout -b branch-name`).
 
 Changes can be committed locally with `git commit [path-to-file]` (to commit
 only a specific portion of the changes made to a file, use `git commit -p [path-to-file]`).
+
+### Creating pull request
+
+There are two main ways to create a pull request, via the [GitHub CLI](https://cli.github.com/) or the
+GitHub Website. Guides for using both methods can be found [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
+
+It is important when writing a pull request to include a helpful title
+(titles such as "Pull Request #3" or "My changes" are not this) and a brief yet
+comprehensive description.
+
+__Remember, pull requests are subject to review by the repository owner before
+being merged. They are not a guarantee that the changes will be merged__
