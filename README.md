@@ -71,7 +71,7 @@ burpsuite and firefox.
 
 #### Installed
 
-- Vulnerability Assessment Script (Adam Board)
+- Vulnerability Assessment Script ([Adam Board](https://github.com/Adam-board))
 - dmitry
 - wpscan
 - whatweb
